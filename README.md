@@ -1,32 +1,69 @@
-# Visualisation 3D de Surface de Volatilité Implicite Synthétique
+# 📈 Volatilité 3D - Surface de Volatilité Implicite
 
-Ce script Python génère et affiche une surface 3D représentant une **volatilité implicite synthétique** en fonction du prix d'exercice (strike) et du temps jusqu'à l’échéance.
+Une application Streamlit interactive pour visualiser et personnaliser une **surface de volatilité implicite** en 3D.
+Elle permet de **générer, charger ou saisir** manuellement les données, et d'explorer dynamiquement l'effet du smile, du skew et de la structure à terme.
 
----
-
-## Fonctionnalités
-
-* Création d’une grille 2D de strikes (80 à 120) et maturités (0.1 à 2 ans).
-* Simulation d’une surface de volatilité avec effets de smile, skew et structure à terme.
-* Affichage en 3D avec `matplotlib`, incluant étiquettes et barre de couleur.
+🔗 **Application en ligne** : [https://volatility-3d.streamlit.app/](https://volatility-3d.streamlit.app/)
 
 ---
 
-## Utilisation
+## 🚀 Fonctionnalités principales
 
-1. Installer les dépendances :
+* 📊 **Visualisation interactive 3D** de la surface de volatilité implicite.
+* 🧪 **Génération synthétique** de surfaces personnalisées (Smile, Skew, Term Structure).
+* ✍️ **Saisie manuelle** des données de strikes, maturités et volatilités.
+* 📁 **Chargement de fichiers CSV** contenant vos propres données de volatilité.
+* 🎨 **Personnalisation graphique** :
 
-```bash
-pip install numpy matplotlib
+  * Palette de couleurs
+  * Angle de vue (élévation, azimut)
+  * Transparence de la surface
+
+---
+
+## 📂 Structure attendue pour les fichiers CSV
+
+Votre fichier doit contenir **au moins trois colonnes** :
+`Strike`, `Maturity` (en années), `Vol` (volatilité implicite)
+
+Exemple :
+
+```
+Strike,Maturity,Vol
+90,0.25,0.25
+100,0.25,0.20
+110,0.25,0.28
+...
 ```
 
-2. Exécuter le script Python.
+---
 
-La visualisation s’ouvre automatiquement et montre la surface de volatilité implicite simulée.
+## ⚙️ Lancer l’application en local
+
+1. Clonez le dépôt :
+
+   ```bash
+   git clone <votre_repo_git>
+   cd votre_repo
+   ```
+
+2. Installez les dépendances :
+
+   ```bash
+   pip install streamlit numpy matplotlib pandas
+   ```
+
+3. Lancez l'application :
+
+   ```bash
+   streamlit run app.py
+   ```
 
 ---
 
-## Description rapide
+## 📌 Dépendances
 
-* La fonction `F(K, T, S0)` modélise la volatilité implicite en combinant un niveau ATM, un sourire, un skew et une décroissance avec la maturité.
-* La surface est tracée en 3D avec `plot_surface` pour explorer l’impact simultané des strikes et des échéances.
+* `streamlit`
+* `numpy`
+* `matplotlib`
+* `pandas`
