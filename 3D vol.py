@@ -199,7 +199,7 @@ if data_loaded and X_strikes is not None and Y_maturities is not None and Z_impl
 
         ax.set_xlabel("Prix d'Exercice (K)")
         ax.set_ylabel("Temps jusqu'à l'Échéance (T, en années)")
-        ax.set_zlabel("Volatilité Implicite ($\sigma$)")
+        ax.set_zlabel(r"Volatilité Implicite ($\sigma$)")
         ax.set_title("Surface de Volatilité Implicite")
 
         fig.colorbar(surf, shrink=0.5, aspect=5, label="Volatilité Implicite")
